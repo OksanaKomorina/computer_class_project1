@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers Delete</title>
+</head>
+<body>
+<h1>Delete Teacher Data</h1>
+<form action="/Teachers_DeletePy" method="get">
+    {% csrf_token %}
+    <label>
+        Delete where:
+    </label>
+    &nbsp;
+    <select name="col">
+        <option selected value="TeacherID">Teacher ID</option>
+        <option value="ParticipateID">Participant ID</option>
+        <option value="SubjectCode">Subject Code</option>
+        <option value="Firstname">First Name</option>
+        <option value="Lastname">Last Name</option>
+        <option value="Email">Email</option>
+        <option value="Password">Password</option>
+    </select>
+    <label>
+        With value:
+    </label>
+    &nbsp;
+    <input name="val" required type="text">
+    <br>
+    <input type="submit" value="Delete">
+</form>
+</body>
+</html>

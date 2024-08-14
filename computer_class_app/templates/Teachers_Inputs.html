@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Teachers Inputs</title>
+</head>
+<body>
+<h1>Input Teacher Data</h1>
+<form action="/Teachers_InputsPy" method="get">
+    {% csrf_token %}
+    <label for="teacherID">
+        Teacher ID:
+    </label>
+    <input id="teacherID" name="teacherID" required type="number">
+    <br>
+    <label for="participateID">
+        Participant ID:
+    </label>
+    <input id="participateID" name="participateID" required type="number">
+    <br>
+    <label for="subjectCode">
+        Subject Code:
+    </label>
+    <input id="subjectCode" name="subjectCode" required type="number">
+    <br>
+    <label for="teacherFirstName">
+        Teacher First Name:
+    </label>
+    <input id="teacherFirstName" name="teacherFirstName" required type="text">
+    <br>
+    <label for="teacherLastName">
+        Teacher Last Name:
+    </label>
+    <input id="teacherLastName" name="teacherLastName" required type="text">
+    <br>
+    <label for="teacherEmail">
+        Teacher Email:
+    </label>
+    <input id="teacherEmail" name="teacherEmail" required type="email">
+    <br>
+    <label for="teacherPassword">
+        Teacher Password:
+    </label>
+    <input id="teacherPassword" minlength="8" name="teacherPassword" required type="password">
+    <br>
+    <input type="submit" value="Add">
+</form>
+</body>
+</html>

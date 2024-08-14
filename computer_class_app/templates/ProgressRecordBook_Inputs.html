@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Progress Record Book Inputs</title>
+</head>
+<body>
+<h1>Enter Progress Record Book Data</h1>
+<form action="/ProgressRecordBook_InputsPy" method="get">
+    {% csrf_token %}
+    <label for="participateID">
+        Participant ID:
+    </label>
+    <input id="participateID" name="participateID" required type="number">
+    <br>
+    <label for="teacherID">
+        Teacher ID:
+    </label>
+    <input id="teacherID" name="teacherID" required type="number">
+    <br>
+    <label for="subjectCode">
+        Subject Code:
+    </label>
+    <input id="subjectCode" name="subjectCode" required type="number">
+    <br>
+    <label for="Rating">
+        Rating:
+    </label>
+    <input id="Rating" max="5" min="2" name="Rating" required type="number">
+    <br>
+    <input type="submit" value="Add">
+</form>
+</body>
+</html>

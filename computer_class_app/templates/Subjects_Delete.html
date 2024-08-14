@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subjects Delete</title>
+</head>
+<body>
+<h1>Delete Subject Data</h1>
+<form action="/Subjects_DeletePy" method="get">
+    {% csrf_token %}
+    <label>
+        Delete where:
+    </label>
+    &nbsp;
+    <select name="col">
+        <option selected value="ParticipateID">Participant ID</option>
+        <option value="SubjectCode">Subject Code</option>
+        <option value="SubjectName">Subject Name</option>
+    </select>
+    <label>
+        With value:
+    </label>
+    &nbsp;
+    <input name="val" required type="text">
+    <br>
+    <input type="submit" value="Delete">
+</form>
+</body>
+</html>

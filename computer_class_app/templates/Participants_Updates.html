@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Participants Updates</title>
+</head>
+<body id="body">
+<h1>Update Participant Data</h1>
+<form action="" id="PUF" method="get" onsubmit="return checkEmailValidation(event)">
+    {% csrf_token %}
+    <label>
+        Set:
+    </label>
+    &nbsp;
+    <select id="list" name="col">
+        <option selected value="Firstname">First Name</option>
+        <option value="Lastname">Last Name</option>
+        <option value="Email">Email</option>
+        <option value="Password">Password</option>
+    </select>
+    <label>
+        To value:
+    </label>
+    &nbsp;
+    <input id="val" name="val" required type="text">
+    <br>
+    <label>
+        Where:
+    </label>
+    <select name="condition_col">
+        <option selected value="">_</option>
+        <option value="ParticipateID">Participant ID</option>
+        <option value="Firstname">First Name</option>
+        <option value="Lastname">Last Name</option>
+        <option value="Email">Email</option>
+        <option value="Password">Password</option>
+    </select>
+    <label>
+        With value:
+    </label>
+    &nbsp;
+    <input name="condition_val" type="text">
+    <br>
+    <input type="submit" value="Update">
+</form>
+<script>
+            function checkEmailValidation(event)
+            {
+                list = document.getElementById("list");
+                if (list.value === "Email") {
+                    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                    email = document.getElementById("val").value;
+                    if (!email.match(mailformat)) {
+                        event.preventDefault();
+                        body = document.getElementById("body");
+                        newEl = document.createElement("h1");
+                        newEl.appendChild(document.createTextNode("Invalid Email, Try Again."));
+                        body.appendChild(newEl);
+                        return false;
+                    }
+                    document.getElementById("PUF").action = "/Participants_UpdatesPy";
+                    document.getElementById("PUF").submit();
+                    return true;
+                } else {
+                    document.getElementById("PUF").action = "/Participants_UpdatesPy";
+                    document.getElementById("PUF").submit();
+                    return true;
+                }
+            }
+
+</script>
+</body>
+</html>

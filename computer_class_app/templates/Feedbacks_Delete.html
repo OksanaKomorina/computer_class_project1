@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedbacks Delete</title>
+</head>
+<body>
+<h1>Delete Feedback Data</h1>
+<form action="/Feedbacks_DeletePy" method="get">
+    {% csrf_token %}
+    <label>
+        Delete where:
+    </label>
+    &nbsp;
+    <select name="col">
+        <option selected value="FeedbackID">Feedback ID</option>
+        <option value="ParticipateID">Participant ID</option>
+        <option value="Feedback">Feedback</option>
+    </select>
+    <label>
+        With value:
+    </label>
+    &nbsp;
+    <input name="val" required type="text">
+    <br>
+    <input type="submit" value="Delete">
+</form>
+</body>
+</html>

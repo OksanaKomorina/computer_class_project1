@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Subjects Inputs</title>
+</head>
+<body>
+<h1>Input Subject Data</h1>
+<form action="/Subjects_InputsPy" method="get">
+    {% csrf_token %}
+    <label for="participateID">
+        Participant ID:
+    </label>
+    <input id="participateID" name="participateID" required type="number">
+    <br>
+    <label for="subjectCode">
+        Subject Code:
+    </label>
+    <input id="subjectCode" name="subjectCode" required type="number">
+    <br>
+    <label for="subjectName">
+        Subject Name:
+    </label>
+    <input id="subjectName" name="subjectName" required type="text">
+    <br>
+    <input type="submit" value="Add">
+</form>
+</body>
+</html>

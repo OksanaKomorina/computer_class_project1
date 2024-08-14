@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Feedbacks Inputs</title>
+</head>
+<body>
+<h1>Input Feedback Data</h1>
+<form action="/Feedbacks_InputsPy" method="get">
+    {% csrf_token %}
+    <label for="participateID">
+        Participant ID:
+    </label>
+    <input id="participateID" name="participateID" required type="number">
+    <br>
+    <label for="feedback">
+        Feedback:
+    </label>
+    <input id="feedback" name="feedback" required type="text">
+    <br>
+    <input type="submit" value="Add">
+</form>
+</body>
+</html>

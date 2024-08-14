@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Participants Inputs</title>
+</head>
+<body>
+<h1>Input Participant Data</h1>
+<form action="/Participants_InputsPy" method="get">
+    {% csrf_token %}
+    <label for="participateID">
+        Participant ID:
+    </label>
+    <input id="participateID" name="participateID" required type="number">
+    <br>
+    <label for="participateFirstName">
+        Participant First Name:
+    </label>
+    <input id="participateFirstName" name="participateFirstName" required type="text">
+    <br>
+    <label for="participateLastName">
+        Participant Last Name:
+    </label>
+    <input id="participateLastName" name="participateLastName" required type="text">
+    <br>
+    <label for="participateEmail">
+        Participant Email:
+    </label>
+    <input id="participateEmail" name="participateEmail" required type="email">
+    <br>
+    <label for="participatePassword">
+        Participant Password:
+    </label>
+    <input id="participatePassword" minlength="8" name="participatePassword" required type="password">
+    <br>
+    <input type="submit" value="Add">
+</form>
+</body>
+</html>

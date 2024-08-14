@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress Record Book Delete</title>
+</head>
+<body id="body">
+<h1>Delete Progress Record Book Data</h1>
+<form action="" id="PRBD_Form" method="get" onsubmit="return checkRatingValue(event)">
+    {% csrf_token %}
+    <label>
+        Delete where:
+    </label>
+    &nbsp;
+    <select id="list" name="col">
+        <option selected value="TeacherID">Teacher ID</option>
+        <option value="ParticipateID">Participant ID</option>
+        <option value="SubjectCode">Subject Code</option>
+        <option value="rating">Rating</option>
+    </select>
+    <label>
+        With value:
+    </label>
+    &nbsp;
+    <input id="val" name="val" required type="text">
+    <br>
+    <input type="submit" value="Delete">
+</form>
+<script>
+    function checkRatingValue(event) {
+        list = document.getElementById("list");
+        if (list.value === "rating") {
+            val = document.getElementById("val").value;
+            if (val < 2 || val > 5) {
+                event.preventDefault();
+                body = document.getElementById("body");
+                newEl = document.createElement("h1");
+                newEl.appendChild(document.createTextNode("Invalid Rating Value, Try Again."));
+                body.appendChild(newEl);
+                return false;
+            }
+        }
+        document.getElementById("PRBD_Form").action = "/ProgressRecordBook_DeletePy";
+        document.getElementById("PRBD_Form").submit();
+        return true;
+    }
+
+</script>
+</body>
+</html>

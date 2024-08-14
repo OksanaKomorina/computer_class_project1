@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subjects Updates</title>
+</head>
+<body>
+<h1>Update Subject Data</h1>
+<form action="/Subjects_UpdatesPy" method="get">
+    {% csrf_token %}
+    <label>
+        Set:
+    </label>
+    &nbsp;
+    <select name="col">
+        <option selected value="ParticipateID">Participant ID</option>
+        <option value="SubjectName">Subject Name</option>
+    </select>
+    <label>
+        To value:
+    </label>
+    &nbsp;
+    <input name="val" required type="text">
+    <br>
+    <label>
+        Where:
+    </label>
+    <select name="condition_col">
+        <option selected value="">_</option>
+        <option value="ParticipateID">Participant ID</option>
+        <option value="SubjectCode">Subject Code</option>
+        <option value="SubjectName">Subject Name</option>
+    </select>
+    <label>
+        With value:
+    </label>
+    &nbsp;
+    <input name="condition_val" type="text">
+    <br>
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>
